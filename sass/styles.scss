@@ -1,0 +1,244 @@
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+// Import Space Candy variables & mixins
+@import "space-candy-variables";
+
+body{
+	background:{
+	image: url(../images/stardust.png);
+	repeat: repeat;
+	}
+	padding-bottom: 30px;
+	font-family: $freight-font-family;
+	font-weight: $freight-light;
+}
+
+
+
+
+// TYPE ---------
+
+h1{
+	letter-spacing: 50px;
+	text-transform: uppercase;
+	color: $neon-yellow;
+	font:{
+		size: 72px;
+	}
+	margin-bottom: 50px;
+	font-weight: $freight-bold;
+	text-shadow: 0px 0px 30px rgba(237, 194, 46, 0.5);
+}
+
+h3{
+	font-weight: $freight-bold;
+}
+
+strong{
+	font-weight: $freight-medium;
+}
+
+// --------- END TYPE
+
+
+
+
+
+
+// FILTER BAR -----------
+
+.filter-bar{
+	margin-bottom: 40px;
+	ul{
+		margin:{
+			left: none;
+		}
+		list-style: none outside none;
+
+		@include webkit-vendor-prefix(margin-before, 0);
+  		@include webkit-vendor-prefix(margin-after, 0);
+  		@include webkit-vendor-prefix(margin-start, 0);
+  		@include webkit-vendor-prefix(margin-end, 0);
+  		@include webkit-vendor-prefix(padding-start, 0);
+		li{
+			font-size: 21px;
+			width: 100%;
+			padding: 10px 10px 10px 20px;
+			cursor: pointer;
+			@include transition-property(background-color);
+  			@include transition-duration(0.5s);
+  			&.space_candy{
+  				color: $neon-yellow;
+  				@include slab-border-left($neon-yellow);
+				&:hover{
+					background-color: $neon-yellow;	 
+				}
+  			}
+			&.galaxy{
+				color: $neon-gray;
+				@include slab-border-left($neon-gray);
+				&:hover{
+					background-color: $neon-gray;	 
+				}
+			}
+			&.milky_way{
+				color: $neon-blue;
+				@include slab-border-left($neon-blue);
+				&:hover{
+					background-color: $neon-blue;
+				}
+			}
+			&.supernova{
+				color: $neon-orange;
+				@include slab-border-left($neon-orange);
+				&:hover{
+					background-color: $neon-orange;
+				}
+			}
+			&.constellation{
+				color: $neon-pink;
+				@include slab-border-left($neon-pink);
+				&:hover{
+					background-color: $neon-pink;
+				}
+			}
+			&.planet{
+				color: $neon-green;
+				@include slab-border-left($neon-green);
+				&:hover{
+					background-color: $neon-green;
+				}
+			}
+			&:hover{
+  				@include transition-property(background-color);
+  				@include transition-duration(0.5s);
+  				color: $space;
+  			}
+		}
+	}
+}
+
+// --------- END FILTER BAR
+
+
+
+
+// GRID OF ASSETS -----------
+
+.asset-block{
+	width: 100%;
+	border:{
+		width: $asset-block-border-width;
+		style: solid;
+	}
+	img{
+		width: 100%;
+	}
+	margin-bottom: 30px;
+}
+
+.galaxy{
+	@include asset-borders($neon-gray);
+}
+.milky-way{
+	@include asset-borders($neon-blue);
+}
+.supernova{
+	@include asset-borders($neon-orange);
+}
+.constellation{
+	@include asset-borders($neon-pink);
+}
+.planet{
+	@include asset-borders($neon-green);
+}
+
+// METADATA & ITS HOVER CSS PROPERTIES
+
+.the_galaxies{
+	figure{
+	position: relative;
+	display: block;
+	.hide-me{
+		visibility: hidden;
+	}
+	&.milky-way{
+		&:hover:before{
+			background: $neon-blue;
+		}
+	}
+	&.galaxy{
+		&:hover:before{
+			background: $neon-gray;
+		}
+	}
+	&.planet{
+		&:hover:before{
+			background: $neon-green;
+		}
+	}
+	&.constellation{
+		&:hover:before{
+			background: $neon-pink;
+		}
+	}
+	&.supernova{
+		&:hover:before{
+			background: $neon-orange;
+		}
+	}
+		&:hover:before{
+			@include transition-property(background-color);
+  			@include transition-duration(0.2s);
+		}
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: none;
+			@include transition-property(background-color);
+  			@include transition-duration(0.2s);
+		}
+		img{z-index: 1;}
+		h3{
+			position: absolute;
+			top: 0;
+			z-index: 2;
+			color: white;
+			margin-top: 5px;
+			margin-left: 5px;
+			font-size: 28px;
+		}
+		p{
+			position: absolute;
+			z-index: 3;
+			bottom: 0;
+			color: white;
+			margin-bottom: 5px;
+			margin-left: 5px;
+			font-size: 16px;
+		}
+
+	}
+
+}
+
+// --------- END GRID OF ASSETS
+
+
+
+
+
+
+

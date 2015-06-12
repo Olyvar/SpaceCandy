@@ -1,0 +1,43 @@
+// S P A C E  C A N D Y  
+// Variables & Mixins
+
+// Colors
+$neon-gray: darken(#e0e4cc, 5%);
+$neon-blue: #48b9e3;
+$neon-green: #7fe348;
+$neon-pink: #cb48e3;
+$neon-orange: #e37148;
+$neon-yellow: #edc22e;
+$space: #444349;
+$black: black;
+$white: white;
+
+// Measurements
+$filter-tabs: 8px;
+$asset-block-border-width: 10px;
+
+// Typography
+$freight-font-family: "freight-sans-pro",sans-serif;
+$freight-light: 300;
+$freight-medium: 500;
+$freight-bold: 700;
+
+// Mixins
+@mixin webkit-vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+}
+
+@mixin slab-border-left($argument){
+	border-left: #{$argument} solid 15px;
+}
+
+@mixin asset-borders($argument){
+	border-color: #{$argument};
+}
+
+// -ms-#{$name}: #{$argument};
+// -moz-#{$name}: #{$argument};
+// -o-#{$name}: #{$argument};
+// #{$name}: #{$argument};
+
+
